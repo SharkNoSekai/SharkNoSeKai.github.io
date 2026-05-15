@@ -1,0 +1,119 @@
+<!Shark html>
+  <html lang="pt-BR">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>S H A R K</title>
+
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(5000deg, #000000, #5a2165);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        color: white;
+      }
+
+      .card {
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(12px);
+        padding: 30px;
+        border-radius: 22px;
+        width: 340px;
+        text-align: center;
+      }
+
+      .profile {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px;
+      }
+
+      h1 {
+        margin: 10px 0 4px;
+      }
+
+      .bio {
+        opacity: 0.8;
+        margin-bottom: 15px;
+      }
+
+      .clock {
+        font-size: 14px;
+        margin-bottom: 20px;
+        opacity: 0.9;
+      }
+
+      .links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .links a img {
+        width: 75%;
+        border-radius: 20px;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+
+      .links a img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="card">
+
+      <!-- FOTO DE PERFIL -->
+      <img class="profile" src="https://i.pinimg.com/736x/f4/ed/38/f4ed38f5e78a913f7a8a817d1b1ac4a5.jpg">
+
+      <h1>S HA R K</h1>
+      <div class="bio">I LOVE ART</div>
+
+      <!-- RELOGIO RJ -->
+      <div class="clock" id="clock">Carregando horário...</div>
+
+      <!-- BOTOES COM IMAGEM -->
+      <div class="links">
+        <a href="https://discord.gg/QVezNH4bw4" target="_blank">
+          <img src="https://i.pinimg.com/736x/d4/60/39/d46039db85e45e6873777ea7701513a8.jpg" alt="Discord">
+        </a>
+
+        <a href="https://www.youtube.com/@SharkNoSekai" target="_blank">
+          <img src="https://i.pinimg.com/736x/7a/5d/56/7a5d56c5e22d6fed8d72eeb70329f5f5.jpg" alt="Youtube">
+        </a>
+
+        <a href="https://www.tiktok.com/@sharknosekai?is_from_webapp=1&sender_device=pc" target="_blank">
+          <img src="https://i.pinimg.com/736x/7c/cc/ca/7cccca1d0b79de1d3f5f5bbca0a6c4eb.jpg" alt="Tiktok">
+        </a>
+
+        <a href="https://www.instagram.com/sharknosekai" target="_blank">
+          <img src="https://i.pinimg.com/736x/b6/66/09/b666091cda6179641b3a5e6303761261.jpg" alt="Instagram">
+        </a>
+      </div>
+
+    </div>
+
+    <script>
+      function atualizarRelogio() {
+        const agora = new Date().toLocaleString("pt-BR", {
+          timeZone: "America/Sao_Paulo",
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit"
+        });
+        document.getElementById("clock").innerText =
+          " Time • " + agora;
+      }
+      setInterval(atualizarRelogio, 1000);
+      atualizarRelogio();
+    </script>
+  
